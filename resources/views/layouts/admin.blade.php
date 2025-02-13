@@ -54,6 +54,15 @@
     <script src="{{ asset('js/core/popper.min.js') }}"></script>
     <script src="{{ asset('js/core/bootstrap-material-design.min.js') }}"></script>
     <script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    @if(session('status'))
+    <script>
+        swal("{{ session('status') }}");
+
+    </script>
+
+    @endif
     @yield('scripts')
 </body>
 </html>
