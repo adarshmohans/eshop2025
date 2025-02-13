@@ -75,4 +75,15 @@ class CategoryController extends Controller
     $category->update();
     return redirect('/dashboard')->with('status', 'Category Updated Successfully');
 }
+
+    public function delete($id){
+        $category = Category::find($id);
+        $path = 'assets/uploads/category/'.$category->image;
+        if(File::exists($path))
+        {
+            File::delete($path);
+        }
+        $category->delete();
+        return redirect('categories')->with('status', 'Category Deleted Successfully');
+    }
 }
