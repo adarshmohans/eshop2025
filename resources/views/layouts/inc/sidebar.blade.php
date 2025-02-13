@@ -24,6 +24,20 @@
                 </a>
             </li>
 
+            <li class="nav-item {{ Request::is('products')?'active':'' }} ">
+                <a class="nav-link" href="{{ route('products') }}">
+                    <i class="material-icons">person</i>
+                    <p>Products</p>
+                </a>
+            </li>
+
+            <li class="nav-item {{ Request::is('add-products')?'active':'' }}">
+                <a class="nav-link" href="{{ route('add.products') }}">
+                    <i class="material-icons">person</i>
+                    <p>Add Product</p>
+                </a>
+            </li>
+
             <li class="nav-item ">
                 <a class="nav-link" href="./tables.html">
                     <i class="material-icons">content_paste</i>
