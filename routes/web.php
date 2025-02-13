@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +29,7 @@ Route::group(['middleware' => ['auth','isAdmin']], function () {
     Route::get('categories', 'Admin\CategoryController@index')->name('categories');
     Route::get('add-category', 'Admin\CategoryController@add')->name('add.category');
     Route::post('insert-category', 'Admin\CategoryController@insert')->name('insert.category');
+    Route::get('edit-prod/{id}', [CategoryController::class, 'edit'])->name('edit.prod');
+    Route::post('update-category/{id}', [CategoryController::class, 'update'])->name('update.category');
  
  });
