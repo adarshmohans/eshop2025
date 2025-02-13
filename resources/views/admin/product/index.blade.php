@@ -10,8 +10,9 @@
             <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Category</th>
                     <th>Name</th>
-                    <th>Description</th>
+                    <th>Selling Price</th>
                     <th>Image</th>
                     <th>Action</th>
                 </tr>
@@ -20,8 +21,9 @@
                 @foreach($products as $item)
                 <tr>
                     <td>{{ $item->id }}</td>
+                    <td>{{ $item->category->name }}</td>
                     <td>{{ $item->name }}</td>
-                    <td>{{ $item->description }}</td>
+                    <td>{{ $item->selling_price }}</td>
                     <td>
                         <img src="{{ asset('assets/uploads/products/'.$item->image) }}" width="200" alt="image here">
                     </td>
