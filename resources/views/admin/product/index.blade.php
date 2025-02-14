@@ -28,8 +28,9 @@
                         <img src="{{ asset('assets/uploads/products/'.$item->image) }}" width="200" alt="image here">
                     </td>
                     <td>
-                        <a href="" class="btn btn-primary">Edit</a>
-                        <a href="" class="btn btn-danger">Delete</a>
+                        <a href="{{ route('edit.product',$item->id) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ route('delete.product',$item->id) }}" class="btn btn-danger">Delete</a>
+
                     </td>
                 </tr>
                 @endforeach
