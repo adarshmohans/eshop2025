@@ -18,15 +18,16 @@ use App\Http\Controllers\Admin\ProductController;
 */
 
 Route::get('/',[FrontEndController::class, 'index'])->name('index');
+Route::get('category',[FrontEndController::class, 'category'])->name('category'); //user category
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['middleware' => ['auth','isAdmin']], function () {
+Route::group(['middleware' => ['auth','isAdmin']], function () { //Admin
 
     Route::get('/dashboard', 'Admin\FrontEndController@index')->name('dashboard');
-    Route::get('categories', 'Admin\CategoryController@index')->name('categories');
+    Route::get('categories', 'Admin\CategoryController@index')->name('categories');//admin categories
     Route::get('add-category', 'Admin\CategoryController@add')->name('add.category');
     Route::post('insert-category', 'Admin\CategoryController@insert')->name('insert.category');
     Route::get('edit-prod/{id}', [CategoryController::class, 'edit'])->name('edit.prod');

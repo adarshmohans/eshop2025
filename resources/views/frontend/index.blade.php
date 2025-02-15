@@ -28,6 +28,28 @@ Welcome to E-Shop
         </div>
     </div>
 </div>
+
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <h2>Trending Category</h2>
+            <div class="owl-carousel featured-carousel owl-theme">
+                @foreach($trending_category as $tcat)
+                <div class="item">
+                    <div class="card">
+                        <img src="{{ asset('assets/uploads/category/'.$tcat->image) }}" alt="Product image">
+                        <div class="card-body">
+                            <h5>{{ $tcat->name }}</h5>
+                            <p>{{ $tcat->description}}</p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 
 @section('scripts')
