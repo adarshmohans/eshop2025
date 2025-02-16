@@ -21,6 +21,7 @@ Category
                                     <p>{{ $cate->description }}</p>
                                 </div>
                             </div>
+                        </a>
                     </div>
                     @endforeach
                 </div>
