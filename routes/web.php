@@ -20,6 +20,8 @@ use App\Http\Controllers\Admin\ProductController;
 Route::get('/',[FrontEndController::class, 'index'])->name('index');
 Route::get('category',[FrontEndController::class, 'category'])->name('category'); //user category
 Route::get('view-category/{slug}',[FrontEndController::class, 'viewcategory'])->name('view.category'); 
+Route::get('category/{cate_slug}/{prod_slug}',[FrontEndController::class, 'productview'])->name('view.product'); 
+
 
 Auth::routes();
 
