@@ -2,6 +2,7 @@
 
 @section('title', $products->name)
 
+
 @section('content')
 <div class="py-3 mb-4 shadow-sm bg-warning border-top">
     <div class="container">
@@ -46,8 +47,8 @@
                         </div>
                         <div class="col-md-10">
                             <br>
-                            <button type="button" class="btn btn-success me-3 float-start">Add to Wishlist</button>
-                            <button type="button" class="btn btn-primary me-3 float-start">Add to Cart</button>
+                            <button type="button" class="btn btn-success me-3 float-start">Add to Wishlist<i class="fa fa-heart"></i></button>
+                            <button type="button" class="btn btn-primary me-3 float-start">Add to Cart<i class="fa fa-shopping-cart"></i></button>
                         </div>
                     </div>
                 </div>
