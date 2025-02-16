@@ -36,13 +36,15 @@ Welcome to E-Shop
             <div class="owl-carousel featured-carousel owl-theme">
                 @foreach($trending_category as $tcat)
                 <div class="item">
-                    <div class="card">
-                        <img src="{{ asset('assets/uploads/category/'.$tcat->image) }}" alt="Product image">
-                        <div class="card-body">
-                            <h5>{{ $tcat->name }}</h5>
-                            <p>{{ $tcat->description}}</p>
+                    <a href="{{ route('view.category',$tcat->slug) }}">
+                        <div class="card">
+                            <img src="{{ asset('assets/uploads/category/'.$tcat->image) }}" alt="Product image">
+                            <div class="card-body">
+                                <h5>{{ $tcat->name }}</h5>
+                                <p>{{ $tcat->description}}</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 @endforeach
             </div>

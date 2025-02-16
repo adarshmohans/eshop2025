@@ -17,6 +17,13 @@
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
 
+    <style>
+        a {
+            text-decoration: none !important;
+        }
+
+    </style>
+
 </head>
 <body>
     @include('layouts.inc.frontnav')
