@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Frontend\FrontEndController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Frontend\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,7 @@ Route::post('delete-cart-item', [CartController::class, 'deleteproduct'])->name(
 Route::post('update-cart', [CartController::class, 'updatecart'])->name('updatecart');
 Route::middleware(['auth'])->group(function(){
     Route::get('cart', [CartController::class, 'viewcart'])->name('cart');
+    Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout');
 });
 
 Route::group(['middleware' => ['auth','isAdmin']], function () { //Admin
