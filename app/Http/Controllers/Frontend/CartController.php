@@ -42,4 +42,32 @@ class CartController extends Controller
     }
 }
 
+public function viewcart(){
+    if(Auth::check()){
+        $cartitems = Cart::where('user_id', Auth::id())->get();
+        return view('frontend.cart', compact('cartitems'));
+    }
+    else{
+        return redirect('/login')->with('error', 'Please login to view cart');
+    }
+}
+
+public function deleteproduct(Request $request)
+{
+    if(Auth::check())
+    {
+        $prod_id = $request->input('prod_id');
+        if(Cart::where('prod_id', $prod_id)->where('user_id', Auth::id())->exists())
+        {
+            $cartItem = Cart::where('prod_id', $prod_id)->where('user_id', Auth::id())->first();
+            $cartItem->delete();
+            return response()->json(['status' => "Product Deleted Successfully"]);
+        }
+    }
+    else
+    {
+        return response()->json(['status' => "Login to Continue"]);
+    }
+}
+
 }
