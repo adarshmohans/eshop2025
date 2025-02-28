@@ -6,7 +6,7 @@
         <h1>Products</h1>
     </div>
     <div class="card-body">
-        <table class="table">
+        <table class="table table-borderd table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
