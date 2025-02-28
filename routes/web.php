@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Frontend\CartController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -58,5 +59,11 @@ Route::group(['middleware' => ['auth','isAdmin']], function () { //Admin
     Route::get('edit-product/{id}', [ProductController::class, 'edit'])->name('edit.product');
     Route::post('update-product/{id}', [ProductController::class, 'update'])->name('update.product');
     Route::get('delete-product/{id}', [ProductController::class, 'delete'])->name('delete.product');
+    Route::get('users', [FrontEndController::class, 'users'])->name('users');
+    Route::get('orders', [OrderController::class, 'index'])->name('orders');
+    Route::get('admin/view-order/{id}', [OrderController::class, 'view'])->name('admin.orderview');
+    Route::put('update-order/{id}', [OrderController::class, 'updateorder'])->name('admin.updateorder');
+    Route::get('order-history', [OrderController::class, 'orderhistory'])->name('admin.orderhistory');
+
  
  });
