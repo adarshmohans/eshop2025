@@ -76,6 +76,8 @@ Checkout
                 <div class="card">
                     <div class="card-body">
                         <h6>Order Details</h6>
+                        <hr>
+                        @if(count($cartitems) > 0)
                         <table class="table table-striped table-bordered">
                             <thead>
                                 <tr>
@@ -95,6 +97,11 @@ Checkout
                             </tbody>
                         </table>
                         <button class="btn btn-primary float-end">Place Order</button>
+                        @else
+                        <div class="text-center py-4">
+                            <h5>No products in cart</h5>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>

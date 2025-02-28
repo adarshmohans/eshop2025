@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Frontend\FrontEndController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Frontend\CheckoutController;
+use App\Http\Controllers\Frontend\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,9 @@ Route::middleware(['auth'])->group(function(){
     Route::get('cart', [CartController::class, 'viewcart'])->name('cart');
     Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout');
     Route::post('place-order', [CheckoutController::class, 'placeorder'])->name('placeorder');
+
+    Route::get('my-orders', [UserController::class, 'index'])->name('myorders');
+    Route::get('view-order/{id}', [UserController::class, 'view'])->name('vieworders');
 });
 
 Route::group(['middleware' => ['auth','isAdmin']], function () { //Admin
